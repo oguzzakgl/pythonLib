@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pydantic
+python-multipart
+pymupdf
+python-docx
+spacy
+scikit-learn
+pandas
+jinja2
+python-dotenv

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HireSync AI | Akıllı CV Analiz Sistemi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <nav>
+        <div class="logo">
+            <div class="logo-box">H</div>
+            <h1>HireSync <span>AI</span></h1>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="active">Dashboard</a>
+            <a href="#">Analizler</a>
+            <a href="#">Raporlar</a>
+        </div>
+        <div class="nav-stats">
+            <div class="stat-item tooltip" data-tip="Bildirimler">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                </svg>
+            </div>
+            <div class="user-profile">
+                <div class="user-avatar">O</div>
+                <span class="user-name">Oğuz</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="main-header">
+            <h2>Hoş Geldiniz, <span class="highlight">Oğuz</span></h2>
+            <p>Bugün işe alım süreçlerinizi yapay zeka ile optimize edin.</p>
+        </header>
+
+        <section class="analysis-grid">
+            <!-- Dosya Yükleme ve Giriş Alanı -->
+            <div class="card glass upload-section">
+                <div class="card-header">
+                    <h3>1. Veri Girişi</h3>
+                </div>
+
+                <div class="input-group">
+                    <label for="job-description">İş İlanı Detayları</label>
+                    <textarea id="job-description" placeholder="Aranan nitelikleri buraya yapıştırın..."></textarea>
+                </div>
+
+                <div class="drop-zone" id="drop-zone">
+                    <div class="drop-zone-content">
+                        <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="2"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <p>CV'yi buraya sürükleyin veya <span>dosya seçin</span></p>
+                        <small>PDF veya DOCX (Maks. 5MB)</small>
+                    </div>
+                    <input type="file" id="cv-upload" hidden>
+                </div>
+
+                <button id="analyze-btn" class="primary-btn">
+                    <span>Analizi Başlat</span>
+                    <div class="btn-loader" id="loader" hidden></div>
+                </button>
+            </div>
+
+            <!-- Sonuçlar ve Grafik Alanı -->
+            <div class="card glass results-section" id="results-card">
+                <div class="card-header">
+                    <h3>2. Analiz Sonuçları</h3>
+                    <div class="status-badge" id="match-status">Bekleniyor</div>
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="scoreChart"></canvas>
+                    <div class="overall-score">
+                        <span id="score-value">0</span>
+                        <small>Uyumluluk</small>
+                    </div>
+                </div>
+
+                <div class="skills-analysis">
+                    <h4>Tespit Edilen Yetenekler</h4>
+                    <div class="skills-cloud" id="skills-cloud">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
